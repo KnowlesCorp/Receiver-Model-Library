@@ -1,0 +1,29 @@
+* ED23146
+* Knowles, 2014
+* For beta testing only. Full release models coming soon.
+* This model represents the best fit to performance as
+* measured on a sampling of devices.  It does not necessarily
+* exactly match design intent or nominal performance. 
+.subckt ED23146 p1 n1 p2 n2
+Cback N0010 N0005 3.07e-13
+Ceff N0035 N0030 8.18e-14
+Cfront N0010 n2 4.55e-14
+Cgap N0025 n2 1.02e-13
+Cmech2 N0035 n2 2.89e-14
+G1_1 N0020 n1 N0015 n2 {-1*1.8e-6}
+G1_2 N0015 n2 N0020 n1 1.8e-6
+Leff N0025 N0030 50200.
+Lmech2 N0035 N0005 8070.
+Lport N0040 p2 4880.
+Rdc p1 N0020 89.
+Rpierce N0005 n2 1.57e10
+Rport N0040 N0010 6.3e7
+GKarm N0025 N0015 laplace {V(N0025,N0015)}={4.85e-11*sqrt(s)}
+Ropen01 N0005 0 1.e15
+Ropen02 N0010 0 1.e15
+Ropen03 N0030 0 1.e15
+Ropen04 N0020 0 1.e15
+Ropen05 n1 0 1.e15
+Ropen06 N0015 0 1.e15
+.ends
+*

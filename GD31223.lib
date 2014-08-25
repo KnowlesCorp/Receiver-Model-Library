@@ -1,0 +1,39 @@
+* GD31223
+* Knowles, 2014
+* For beta testing only. Full release models coming soon.
+* This model represents the best fit to performance as
+* measured on a sampling of devices.  It does not necessarily
+* exactly match design intent or nominal performance. 
+.subckt GD31223 p1 n1 p2 n2
+CRec1_Cback N0005 N0050 7.38e-14
+CRec1_Ceff N0050 N0045 5.53e-14
+CRec1_Cgap N0040 n2 6.34e-14
+GRec1_G1_1 N0065 N0035 N0030 n2 {-1*-3.69e-6}
+GRec1_G1_2 N0030 n2 N0065 N0035 -3.69e-6
+LRec1_Leff N0040 N0045 81500.
+Rec1_Rdc p1 N0065 52.5
+Rec1_Rpierce N0050 n2 1.77e10
+GRec1_Karm N0040 N0030 laplace {V(N0040,N0030)}={2.8e-11*sqrt(s)}
+CRec2_Cback N0005 N0025 7.38e-14
+CRec2_Ceff N0025 N0020 5.53e-14
+CRec2_Cgap N0015 n2 6.34e-14
+GRec2_G1_1 N0060 n1 N0010 n2 {-1*-3.69e-6}
+GRec2_G1_2 N0010 n2 N0060 n1 -3.69e-6
+LRec2_Leff N0015 N0020 81500.
+Rec2_Rdc N0035 N0060 52.5
+Rec2_Rpierce N0025 n2 1.77e10
+GRec2_Karm N0015 N0010 laplace {V(N0015,N0010)}={2.8e-11*sqrt(s)}
+Cfront N0005 n2 4.61e-14
+Rport N0005 N0055 8.68e7
+Lport N0055 p2 9650.
+Ropen01 n2 0 1.e15
+Ropen02 N0005 0 1.e15
+Ropen03 N0020 0 1.e15
+Ropen04 N0045 0 1.e15
+Ropen05 N0035 0 1.e15
+Ropen06 p1 0 1.e15
+Ropen07 N0030 0 1.e15
+Ropen08 N0010 0 1.e15
+Ropen09 n1 0 1.e15
+.ends
+*

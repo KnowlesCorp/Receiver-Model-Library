@@ -1,0 +1,27 @@
+* FK30046xx
+* Knowles, 2014
+* For beta testing only. Full release models coming soon.
+* This model represents the best fit to performance as
+* measured on a sampling of devices.  It does not necessarily
+* exactly match design intent or nominal performance. 
+.subckt FK30046xx p1 n1 p2 n2
+Cback N0010 N0005 5.8e-14
+Ceff N0005 N0030 5.07e-14
+Cfront N0010 n2 2.22e-14
+Cgap N0025 n2 5.47e-14
+G1_1 N0020 n1 N0015 n2 {-1*1.54e-6}
+G1_2 N0015 n2 N0020 n1 1.54e-6
+Leff N0025 N0030 104000.
+Lport N0035 p2 14600.
+Rdc p1 N0020 193.
+Rpierce N0005 n2 2.53e10
+Rport N0035 N0010 2.18e8
+GKarm N0025 N0015 laplace {V(N0025,N0015)}={3.05e-11*sqrt(s)}
+Ropen01 N0005 0 1.e15
+Ropen02 N0010 0 1.e15
+Ropen03 N0030 0 1.e15
+Ropen04 N0020 0 1.e15
+Ropen05 n1 0 1.e15
+Ropen06 N0015 0 1.e15
+.ends
+*
